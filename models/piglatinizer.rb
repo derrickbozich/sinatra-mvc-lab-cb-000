@@ -36,26 +36,6 @@ class PigLatinizer
     !char.match(/[aAeEiIoOuU]/)
   end
 
-
-  # def vowel?(input)
-  #     input.scan(/^[aeiou]+/)[0] ? true : false
-  # end
-
-  def consonant_convert(input)
-    first_letter = input[0]
-    input[0] = ''
-    input + first_letter + "ay"
-  end
-
-  def consonant_cluster_convert(input)
-    consonants = input.scan(/^[^aeiou]+/)
-    new_word = input.gsub(/^[^aeiou]+/, '') + consonants[0] + "ay"
-    # new_start_of_word + consonants + "ay"
-  end
-
-  # def vowel_convert(input)
-  #   input+"way"
-  # end
 end
 
 
