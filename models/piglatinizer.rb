@@ -17,6 +17,12 @@ class PigLatinizer
   #   phrase
   # end
 
+  def piglatinize(input)
+    x = (input.split(" ").length == 1) ? piglatinize_word(input) : piglatinize_sentence(input)
+    puts x
+    x
+  end
+
   def piglatinize_word(input)
     if consonant?(input)
       consonant_convert(input)
@@ -40,9 +46,9 @@ class PigLatinizer
     input.scan(/^[^aeiou]+/)[0].length >= 2 ? true : false
   end
 
-  def vowel?(input)
-      input.scan(/^[aeiou]+/)[0] ? true : false
-  end
+  # def vowel?(input)
+  #     input.scan(/^[aeiou]+/)[0] ? true : false
+  # end
 
   def consonant_convert(input)
     first_letter = input[0]
@@ -56,28 +62,28 @@ class PigLatinizer
     # new_start_of_word + consonants + "ay"
   end
 
-  def vowel_convert(input)
-    input+"way"
-  end
+  # def vowel_convert(input)
+  #   input+"way"
+  # end
 end
 
 
 
 
 # class PigLatinizer
-# 
+#
 #   def piglatinize(input_str)
 #     x = (input_str.split(" ").length == 1) ? piglatinize_word(input_str) : piglatinize_sentence(input_str)
 #     puts x
 #     x
 #   end
-# 
+#
 #   private
-# 
+#
 #   def consonant?(char)
 #     !char.match(/[aAeEiIoOuU]/)
 #   end
-# 
+#
 #   def piglatinize_word(word)
 #     # word starts with vowel
 #     if !consonant?(word[0])
@@ -94,12 +100,12 @@ end
 #     end
 #     word << "ay"
 #   end
-# 
+#
 #   def piglatinize_sentence(sentence)
 #     sentence.split.collect { |word| piglatinize_word(word) }.join(" ")
 #   end
-# 
-# 
-# 
-# 
+#
+#
+#
+#
 # end
