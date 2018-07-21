@@ -1,24 +1,9 @@
 class PigLatinizer
 
-  # def piglatinize(input)
-  #   input = input.split(" ")
-  #   phrase = ""
-  #   input.each do |word|
-  #     word.to_s
-  #     case word
-  #     consonant?(word)
-  #       phrase += consonant_convert(word)
-  #     when consonant_cluster?(word)
-  #       phrase += consonant_cluster_convert(word)
-  #     when vowel?(word)
-  #       phrase += vowel_convert(word)
-  #     end
-  #   end
-  #   phrase
-  # end
 
   def piglatinize(input)
     x = (input.split(" ").length == 1) ? piglatinize_word(input) : piglatinize_sentence(input)
+    binding.pry
     puts x
     x
   end
