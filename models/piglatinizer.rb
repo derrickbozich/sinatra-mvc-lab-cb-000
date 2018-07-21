@@ -25,11 +25,11 @@ class PigLatinizer
 
 
   def consonant?(input)
-      input.scan(/^[^aeiou]+/)[0].length == 1 ? true : false
+      input.scan(/^[^aeiouAEIOU]+/)[0].length == 1 ? true : false
   end
 
   def consonant_cluster?(input)
-    input.scan(/^[^aeiou]+/)[0].length >= 2 ? true : false
+    input.scan(/^[^aeiouAEIOU]+/)[0].length >= 2 ? true : false
   end
 
   # def vowel?(input)
